@@ -1,14 +1,14 @@
 import  Router,{Request, Response} from "express";
-import * as PageController  from '../controllers/pagesControllers';
-import * as SearchController  from '../controllers/searchControllers';
+import * as PageControllers  from '../controllers/pageControllers';
+import * as SearchControllers  from '../controllers/searchControllers';
 
-const router = Router()
+const router = Router();
 
-router.get('/', PageController.home);
-router.get('/dogs', PageController.dogs);
-router.get('/cats', PageController.cats);
-router.get('/fishes', PageController.fishes );
+router.get('/', PageControllers.home);
+router.get('/dogs', PageControllers.dogs);
+router.get('/cats', PageControllers.cats);
+router.get('/fishes', PageControllers.fishes );
 
-router.get('/search', SearchController.search);
+router.get('/search', SearchControllers.search);
 
 export default router;
