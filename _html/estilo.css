@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    background-color:darkolivegreen
+    margin: 0;
+    height: 100%;
+}
+
+.container {
+    display:flex;
+    height:500px;
+    flex-direction:row;
+    justify-content:space-between;
+    background-color:coral
+    
+    .container div {
+        width:100px;
+        height:100px;
+        backgroud-color:read-only
+        margin:10px;
+        padding:10px;
+        font-size:18px;
+    }
+
+}
+
+.toptela {
+    width: 100%;
+    height: 20%;
+    background-color: rgb(255, 0, 76);
+    border-top-left-radius: 50;
+    border-top-right-radius: 50;
+    margin-left: 100;
+    margin-top: 30;
+}
+.toptela_area {
+    position: relative;
+    height:0px;
+    background-color: beige;
+    padding:0px 0px 56.25%
+
+}
+
+.toptela_area {
+    position: absolute;
+    top: 0px;
+    bottom: 0px
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border: 0px;
+}
+
+
+.razaosocial {
+    width: 100%;
+    height: 5%;
+    background-color: rgb(238, 255, 0);
+    border-top-left-radius: 50;
+    border-top-right-radius: 50;
+    margin-left: 100;
+    margin-top: 30;
+    
+}
+
+.top, .child, .bottom, .v-block, .big-block {
+   box-sizing: border-box;
+}
+
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+#top {
+    width: 100%;
+    height: 66.6665%;
+    background-color: chartreuse;
+    border-top-left-radius: 10;
+    border-top-right-radius: 10;
+    margin-left: 100;
+    margin-top: 30;
+}
+
+.bottom {
+    width: 100%;
+    height: 33.3332%;
+}
+
+.big-block {
+    width: 66.6665%;
+    height: 100%;
+    float: left;
+}
+.v-block {
+    float: left;
+    width: 33.3332%;
+    height: 100%;
+}
+
+.child {
+    background-color: #c0c0c0;
+    width: 100%;
+    height: 100%;
+
+    /*sombra só pra identificar o childs*/
+    box-shadow: inset 0 0 2px 2px rgba(0,0,0,.26);
+}
+.v-block > .child {
+    height: 50%;
+}
+.bottom > .child {
+    float: left;
+    width: 33.3332%;
+    height: 100%;
+}
+body {
+    margin: 50px;
+    font-size: 17px;
+}    
+    .exemplo {
+            background-color:black;
+            width: 100%;
+            height: 100px;
+            border: 5px solid rgb(228, 30, 30);
+            padding: 10px;
+            margin: 5px;
+            font-size: 20px solid rgb(0, 0, 0);
+
+        
+    }
+    .link {
+        color: rgb(0, 0, 0);
+        font-size: 30px;
+    }
+
+    p {
+        color:#0000ff;
+        font-size: 17px;
+        font-weight: bold;
+        font-family:"Mouse+Memoirs,sans-serif"
+        text-align: justify;
+
+    }
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration:underline;
+
+    }
+
+    h1 {
+        font-family: "mouse+memoirs,sans-serif";
+    }
+
+    table {
+            width: 600px;
+            
+    }
+
+    table thead {
+        background-color: chartreuse;
+    }
+    
+    table tbody {
+        background-color: rgb(20, 220, 110);
+    }
+    td,th {
+        border: 1px solid black;
+        padding: 5px;
+
+    }
+
+    label {
+        display:block;
+        margin-bottom: =20px;
+
+    }
+    fieldset {
+        background-color: #eee;
+        margin-bottom: 20px;
+        border: 2px solid red;
+    }
+    legend {
+        background-color: red
+        color: white;
+        padding: 5px;
+    
+    }
+ 

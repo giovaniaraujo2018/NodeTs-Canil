@@ -1,10 +1,15 @@
 import { Request, Response } from 'express';
 import { createMenuObject } from '../helpers/createMenuObject'; 
-import { Pet } from '../models/pets';
+import { Op} from 'sequelize';
+import { Cadpet} from '../models/Cadpet';
+import { Usuarios} from '../models/Usuarios';
 
-export const home = (req: Request, res:Response)=> {
-     let list = Pet.getAll();
 
+export const home = async (req: Request, res:Response)=> {
+     
+     let list = await Cadpet.findAll();
+
+    
      res.render('pages/page',{
           menu: createMenuObject('all'),
           banner:{
@@ -17,8 +22,18 @@ export const home = (req: Request, res:Response)=> {
      });
 }
 
-export const dogs = (req: Request, res:Response)=> {
-     let list = Pet.getFromType('dog');
+export const dogs = async (req: Request, res:Response)=> {
+     let list = await Cadpet.findAll({
+
+          where: {
+               PetidTipoAnimal : 1
+          },
+          
+          attributes: ['PetNome', 'PetidTipoAnimal','PetImagem','PetidCor', 'PetidSexo']
+          
+             
+     });
+       
 
      res.render('pages/page',{
           menu: createMenuObject('dog'),
@@ -30,9 +45,19 @@ export const dogs = (req: Request, res:Response)=> {
           list
      });
 }
-export const cats = (req: Request, res:Response)=> {
+export const cats = async (req: Request, res:Response)=> {
      
-     let list = Pet.getFromType('cat');
+     let list = await Cadpet.findAll({
+          
+          where: {
+               PetidTipoAnimal : 2
+          },
+          
+          attributes: ['PetNome', 'PetidTipoAnimal','PetImagem','PetidCor', 'PetidSexo']
+          
+             
+     });
+       
      
      res.render('pages/page',{
           menu: createMenuObject('cat'),
@@ -44,10 +69,20 @@ export const cats = (req: Request, res:Response)=> {
           list
      });
 }
-export const fishes = (req: Request, res:Response)=> {
+export const fishes = async (req: Request, res:Response)=> {
 
-     let list = Pet.getFromType('fish');
-
+     let list = await Cadpet.findAll({
+          
+          where: {
+               PetidTipoAnimal : 3
+          },
+          
+          attributes: ['PetNome', 'PetidTipoAnimal','PetImagem','PetidCor', 'PetidSexo']
+          
+             
+     });
+       
+     
      res.render('pages/page',{
           menu: createMenuObject('fish'),
           banner:{

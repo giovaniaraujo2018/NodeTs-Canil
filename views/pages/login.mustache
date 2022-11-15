@@ -1,0 +1,19 @@
+{{>partials/header}}
+
+
+{{#banner}}
+<section class="banner" style="background-image: url('images/{{background}}')">{{title}}</section>
+<h2>{{title}} disponíveis para adoção</h2>
+{{/banner}} 
+
+<fieldset>
+    <legend>Novo Usuário</legend>
+    <form method="POST" action="/login">
+        <input type="email" name="Email" placeholder="Digite um Email" /><br/><br/>
+        <input type="password" name="passwd" placeholder="Digite uma Senha" /><br/><br/>
+        <input type="submit" value="Inserir Usuário" />
+    </form>
+</fieldset>
+
+
+{{>partials/footer}}

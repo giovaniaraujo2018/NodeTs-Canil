@@ -1,12 +1,28 @@
 import { Request, Response } from 'express';
-import {Pet} from '../models/pets';
+import {Cadpet} from '../models/Cadpet';
 import { createMenuObject } from '../helpers/createMenuObject';
+import {Op} from 'sequelize';
 
-export const search = (req: Request, res:Response)=> {
+export const search = async (req: Request, res:Response)=> {
    
-      let query: string = req.query.q as string;
-      let list = Pet.getFromName(query);
+      let searchName: string = 'search';
 
+      let query: string = req.query.q as string;
+     
+
+      let list = await Cadpet.findAll({
+
+            where: {
+                 PetNome: {
+                  [Op.like]: `%${searchName}%`
+                  
+                  
+                }
+            }
+      
+               
+       });
+       
       if (!query) {
             res.redirect('/');
             return;

@@ -9,10 +9,10 @@
 <div class="container list">
 {{#list}}
     <div class="item">
-        <img src= "images/{{image}}" class="item--image" />
-        <div class="item--name">{{name}}</div>
-        <div class="item--color">Cor: {{color}}</div>
-        <div class="item--genre">Gênero: {{sex}}</div>
+        <img src= "images/{{PetImagem}}" class="item--image" />
+        <div class="item--name">{{PetNome}}</div>
+        <div class="item--color">Cor: {{PetidCor}}</div>
+        <div class="item--genre">Gênero: {{PetidSexo}}</div>
    
     </div>
      {{/list}}
@@ -22,6 +22,10 @@
 <div class="container no-list">
      <h2> Não há animais nesta sua pesquisa </h2>
 </div>
-{{/list}} 
+{{/list}}
+
+
+
+
 
 {{>partials/footer}}
