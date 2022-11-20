@@ -7,10 +7,12 @@ export interface usuariosInstance extends Model {
     UsuarioSenha: string;
 }
 
-export const Usuarios = sequelize.define<usuariosInstance>("petshope", {
+export const Usuarios = sequelize.define<usuariosInstance>("Usuarios", {
     idUsuario: {
         primaryKey: true,
-        type: DataTypes.INTEGER
+        autoIncrement:true,
+              type: DataTypes.INTEGER
+           
     },
     UsuarioEmail: {
         type: DataTypes.STRING

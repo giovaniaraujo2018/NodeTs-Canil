@@ -7,10 +7,14 @@ import * as LoginControllers  from '../controllers/loginControllers';
 const router = Router();
 
 router.get('/', PageControllers.home);
+//router.post('/login', LoginControllers.loginform);
+
+
 router.get('/dogs', PageControllers.dogs);
 router.get('/cats', PageControllers.cats);
 router.get('/fishes', PageControllers.fishes );
 router.get('/search', SearchControllers.search);
-router.post('/login', LoginControllers.login);
+router.get('/login', PageControllers.loginaction);
+
 
 export default router;

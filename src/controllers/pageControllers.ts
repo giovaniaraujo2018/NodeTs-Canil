@@ -2,8 +2,7 @@ import { Request, Response } from 'express';
 import { createMenuObject } from '../helpers/createMenuObject'; 
 import { Op} from 'sequelize';
 import { Cadpet} from '../models/Cadpet';
-import { Usuarios} from '../models/Usuarios';
-
+import { Usuarios } from '../models/Usuarios';
 
 export const home = async (req: Request, res:Response)=> {
      
@@ -92,4 +91,10 @@ export const fishes = async (req: Request, res:Response)=> {
           },
           list
      });
+}
+
+export const loginaction = async (req: Request, res:Response)=> {
+    
+     
+     res.render('pages/login')
 }

@@ -1,4 +1,4 @@
-function limpa_formulario_cep() {
+export function limpa_formulario_cep() {
     //Limpa valores do formulário de cep
     document.getElementById('rua').value=("");
     document.getElementById('bairro').value=("");
@@ -7,7 +7,7 @@ function limpa_formulario_cep() {
     
 }
 
-function meu_callback(conteudo) {
+export function meu_callback(conteudo) {
 if (!("erro" in conteudo)) {
     //Atualiza os campos com os valores.
     document.getElementById('rua').value=(conteudo.logradouro);
@@ -23,7 +23,7 @@ else {
 }
 }
 
-function pesquisacep(valor) {
+export function pesquisacep(valor) {
 
 //Nova variável "cep" somente com dígitos.
 var cep = valor.replace(/\D/g, '');
@@ -65,7 +65,7 @@ else {
 }
 }
 
-function formatar(mascara, documento){
+export function formatar(mascara, documento){
 var i = documento.value.length;
 var saida = mascara.substring(0,1);
 var texto = mascara.substring(i);
@@ -76,7 +76,7 @@ if (texto.substring(0,1) != saida){
 
 }
 
-function idade (){
+export function idade (){
 var data=document.getElementById("dtnasc").value;
 var dia=data.substr(0, 2);
 var mes=data.substr(3, 2);
@@ -99,7 +99,7 @@ return idade;
 } 
 
 
-function exibe(i) {
+export function exibe(i) {
 
 
 
@@ -110,8 +110,8 @@ document.getElementById(i).readOnly= true;
 
 }
 
-function desabilita(i){
-
+export function desabilita(i){
+   
 document.getElementById(i).disabled = true;    
 }
 function habilita(i)
@@ -120,7 +120,7 @@ document.getElementById(i).disabled = false;
 }
 
 
-function showhide()
+export function showhide()
 {
 var div = document.getElementById("newpost");
 

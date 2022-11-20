@@ -3,31 +3,22 @@ import { createMenuObject } from '../helpers/createMenuObject';
 import { Op } from 'sequelize';
 import { Usuarios} from '../models/Usuarios';
 
-
      
-export const login = async (req: Request, res:Response)=> {
+export const loginaction = async (req: Request, res:Response)=> {
    
-       
-   const dadosuser = Usuarios.build({
-        
-      UsuarioEmail: 'email',
-      UsuarioSenha: 'password'
-             
-   });
+   let User = await Usuarios.findAll();
+    const UsuarioEmail = req.query.email;
+    const UsuarioSenha = req.query.password;
+     
+   
+    res.render('pages/login',{
+        menu: createMenuObject('login'),
+        banner:{
+             title:'Peixes',
+             background:'banner_fish.jpg'
 
-    console.log (dadosuser.UsuarioEmail);
-    console.log(dadosuser.UsuarioSenha);
-
-    await dadosuser.save();
-
-
-res.render('pages/login',{
-   menu: createMenuObject('login'),
-   banner:{
-        title:'Peixes',
-        background:'banner_fish.jpg'
-
-   }
+        },
+        User
 });
 
 }

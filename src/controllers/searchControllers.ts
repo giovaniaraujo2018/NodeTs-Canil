@@ -5,20 +5,18 @@ import {Op} from 'sequelize';
 
 export const search = async (req: Request, res:Response)=> {
    
-      let searchName: string = 'search';
-
       let query: string = req.query.q as string;
-     
-
+      
       let list = await Cadpet.findAll({
 
             where: {
                  PetNome: {
-                  [Op.like]: `%${searchName}%`
+                  [Op.like]: `%${query}%`
                   
                   
                 }
             }
+            
       
                
        });
